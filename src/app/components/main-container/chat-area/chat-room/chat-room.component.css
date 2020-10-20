@@ -1,0 +1,49 @@
+.chat__area{
+    padding: 30px;
+    
+}
+
+.chat__area__message{
+    position: relative;
+    width: fit-content;
+    max-width: 400px;
+    padding: 10px 10px 5px 0px;
+    border-radius: 10px;
+    background-color: #f6f2f2;
+    margin: 3rem 0;
+}
+
+.chat__area__message:first-child{
+    margin-top: 2rem;
+}
+
+.chat__area__message__text{
+    
+    font-size: large;
+    max-width: inherit;
+    padding-left: 5px;
+}
+
+.chat__area__message__name{
+    position: absolute;
+    top: -20px;
+    left: 5px;
+    font-size: small;
+    font-weight: bold;
+    width: 200px;
+}
+
+.chat__area__message__time{
+    position: relative;
+    right: 0;
+    bottom: 0;
+    margin-left: 10px;
+    font-size: x-small;
+    font-size: xx-small;
+    color: black;
+}
+
+.chat__area__message__owner{
+    margin-left: auto;
+    background-color: darkseagreen;
+}

@@ -1,0 +1,52 @@
+<section class="sidebar">
+    <div class="sidebar__header">
+
+        <img 
+        mat-card-avatar
+        src="https://images.unsplash.com/photo-1532059196142-bd2a6bbbaa55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1866&q=80" alt="avatar">
+        
+        <div class="sidebar__header__icons">
+            <button mat-icon-button>
+                <mat-icon>donut_large</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>chat</mat-icon>
+            </button>
+            <button mat-button class = "sidebar__logout" [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="logout()">
+                    <mat-icon>logout</mat-icon>
+                    Logout
+                </button>
+            </mat-menu>
+        </div>
+
+    </div>
+
+    <div class="sidebar__search">
+
+        <div class="sidebar__search__content">
+            <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+                <button mat-icon-button class="sidebar__search__content__icon">
+                    <mat-icon>search</mat-icon>
+                </button>
+                <input type="text" 
+                       name="search" 
+                       id="" 
+                       class="sidebar__search__content__input" 
+                       placeholder="Search or Start new chat" 
+                       ngModel>
+                <button type="submit" style="display: none;"></button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="sidebar__content">
+        <ng-container *ngFor="let r of roomData; let i=index">
+            <app-sidebar-content [roomData]="r" [randomSeed]="randomSeed[i]" (seedValue)="seedData($event)"></app-sidebar-content>
+        </ng-container>
+    </div>
+</section>
